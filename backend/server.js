@@ -16,10 +16,10 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 
-app.post('/api/v1/message', async (req, res) => {
+app.post('/api/v1/message', async (req, res, next) => {
     try {
         const message = req.body.message;
-        if (!message) throw new Error("Please enter message.")
+        if (!message) res.status(400).json({ message: "Please enter message." });
 
         const completion = await openai.createCompletion({
             model: "text-davinci-003",
