@@ -9,7 +9,7 @@ const Navbar = ({ changeMode, mode }) => {
 
     return (
         <div className="h-24 border-b bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 flex justify-between items-center px-2 sm:px-12 lg:px-32 md:px-16">
-            <span className="text-xl font-semibold font-mono text-gray-800 dark:text-zinc-200">OpenAI</span>
+            <NavLink to="/" className="text-xl font-semibold font-mono text-gray-800 dark:text-zinc-200">OpenAI</NavLink>
             <div className="flex gap-4 items-center justify-evenly font-medium text-gray-700 dark:text-zinc-200">
                 <NavLink to="/" className="hidden md:inline-block">{({ isActive }) => <span className={`${isActive ? " border-b-2 border-gray-500 dark:border-zinc-300" : ""} p-1`}>Home</span>}</NavLink>
                 <NavLink to="/image" className="hidden md:inline-block">{({ isActive }) => <span className={`${isActive ? " border-b-2 border-gray-500 dark:border-zinc-300" : ""} p-1`}>Image</span>}</NavLink>

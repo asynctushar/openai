@@ -47,7 +47,7 @@ app.post('/api/v1/message', async (req, res, next) => {
 app.post('/api/v1/image', async (req, res) => {
     try {
         const message = req.body.message;
-        if (!message) throw new Error("Please enter message.")
+        if (!message) res.status(400).json({ message: "Plese request for an image." });
 
         const response = await openai.createImage({
             prompt: message,
